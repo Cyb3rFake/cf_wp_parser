@@ -12,7 +12,7 @@ l_blue = f"{Fore.LIGHTBLUE_EX}"
 cyan = f"{Fore.LIGHTCYAN_EX}"
 magenta = f"{Fore.MAGENTA}"
 
-def parsing(url="https://render-state.to/wp-json/wp/v2/posts?page=1"):
+def parsing(url="https://render-state.to/wp-json/wp/v2/posts?page=1",timeout=5):
     page = ChromiumPage()
     page.clear_cache()
     try:
@@ -40,7 +40,7 @@ if __name__=="__main__":
         timeout = argv[2]
         page_count = argv[1]
         url = f"https://render-state.to/wp-json/wp/v2/posts?page={page_count}"
-        parsing(url)
+        parsing(url,timeout)
     except Exception as ex:
         pass
         print()
